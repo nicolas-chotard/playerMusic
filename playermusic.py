@@ -7,7 +7,7 @@ import pygame
 def choisir_fichier():
     pygame.mixer.init()
     chemin_fichier = tkinter.filedialog.askopenfilename(
-        filetypes=[("Fichiers audio", "*.mp3;*.wav;*.m4a")]
+        filetypes=[("Fichiers audio", "*.mp3")]
     )
     if chemin_fichier:
         playlist.append(chemin_fichier)
@@ -20,9 +20,9 @@ def supprimer_piste():
     if selection:
         index = int(selection[0])
         del playlist[index]
-        listbox_pistes.delete(index)
+        listbox_pistes.delete(index) 
 
-##Variable pour lancer la musique
+#Variable pour lancer la musique
 
 def jouer_audio():
     selection = listbox_pistes.curselection()
